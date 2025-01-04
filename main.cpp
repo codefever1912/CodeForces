@@ -1,5 +1,4 @@
-#include <iostream>
-#include <bits/stl_queue.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {

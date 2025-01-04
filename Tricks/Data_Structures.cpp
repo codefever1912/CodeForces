@@ -9,7 +9,7 @@ class Node{
         Node *next;
         T val;
 
-        Node():val(0), next(nullptr){}
+        Node():val(T()), next(nullptr){}
         Node(T val):val(val), next(nullptr) {}
         Node(T val, Node* next):val(val), next(next){}
 
@@ -42,7 +42,6 @@ class Stack{
                 top = temp;
                 size++;
             }
-            delete temp;
         }
 
         Node* pop() {
@@ -69,6 +68,17 @@ class Stack{
 
 //Queue 
 template<class T>
+class QueueNode{
+    T val;
+    QueueNode* next;
+    QueueNode():val(T()), next(nullptr){}
+    QueueNode(T val):val(val), next(nullptr){}
+    QueueNode(T val, QueueNode* next):val(val), next(next){}
+
+
+};  
+
+template<class T>
 class Queue{
     Node *front, *back;
     int size;
@@ -83,13 +93,12 @@ class Queue{
             } else {
                 back->next = temp;
                 back = temp;
-                delete temp;
             }
             size++;
         }
 
         Node* dequeue() {
-            is(this->isEmpty()) {
+            if(this->isEmpty()) {
                 cout << "Attempting to deque empty queue, returning nullptr :)" << endl;
                 return nullptr;
             } else {
@@ -106,6 +115,18 @@ class Queue{
 
         int getSize() {
             return size;
+        }
+
+        void print() {
+            if(this->isEmpty()) {
+                cout << "Queue empty at the moment.."
+            } else {
+                Node* temp = this->front;
+                while(temp!=nullptr) {
+                    cout << this->val << endl;
+                    temp = temp->next;
+                }
+        }
         }
 };
 
