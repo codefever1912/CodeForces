@@ -8,16 +8,17 @@ using namespace std;
 #define fastio() ios_base::sync_with_stdio(false); cin.tie(NULL);
 
 void solve() {
-    string s; cin >> s;
-    map<char, vector<int>>mp;
-    int n = s.size();
-    for(int i{0};i<n;i++) {mp[s[i]].push_back(i);}
-    string check = "hello";
-    
+    string x,y; cin >> x >> y;
+    bool ans{false};
+    // sort(x.begin(),x.end());
+    // sort(y.begin(),y.end());
+    cout << ((x<=y)?x:y) << '\n';
 }
 
 int main(){
     fastio();
 
     solve();
-}   
+
+    return 0;
+}

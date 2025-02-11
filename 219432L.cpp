@@ -7,17 +7,19 @@ using namespace std;
 #define ll long long
 #define fastio() ios_base::sync_with_stdio(false); cin.tie(NULL);
 
+int hcf(int x, int y ) {
+    return ((y%x==0)?x:hcf(y%x,x));
+}
+
 void solve() {
-    string s; cin >> s;
-    map<char, vector<int>>mp;
-    int n = s.size();
-    for(int i{0};i<n;i++) {mp[s[i]].push_back(i);}
-    string check = "hello";
-    
+    int x,y; cin >> x >> y;
+    int mx = max(x,y);
+    int mn = min(x,y);
+    cout << hcf(mn,mx) << '\n';
 }
 
 int main(){
     fastio();
 
     solve();
-}   
+}

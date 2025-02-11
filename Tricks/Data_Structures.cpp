@@ -151,53 +151,66 @@ class ListNode{
     // bool isEmpty(){return true;}
 };
 
-//Tree
-template<class T>
-class TreeNode{
-    public:
-        T val;
-        TreeNode *right, *left;
-        TreeNode(): right(nullptr), left(nullptr){}
-        TreeNode(TreeNode *right, TreeNode *left):right(right), left(left) {}
-};
+//Tree - arbitrary no. of children
 
+//Binary Tree (AVL, Red Black)
 template<class T>
-class Tree{
-    TreeNode *root;
+class BinaryTree{
+    struct TreeNode{
+        T val;
+        TreeNode *right;
+        TreeNode *left;
+
+        Node(T val=T(), right=nullptr, left=nullptr):val(val), left(left), right(right){}
+    };
+
+    TreeNode *root{nullptr}; 
     public:
-        void insertNode(TreeNode *node) {
+        void insert(T val){
             if(root==nullptr) {
                 root = node;
             } else {
                 TreeNode *temp = root;
+                while(true){
+                    if(val==temp->val) {break;}
+                    if(val > temp->val){
+                        if(temp->right == nullptr){
+                            TreeNode *tmp = new TreeNode(val);
+                            temp->right = tmp;
+                            break;
+                        }
+                        temp = temp->right;
+                    } else if(val < temp->val){
+                        if(temp->left == nullptr) {
+                            TreeNode *tmp = new TreeNode(val);
+                            temp->left = tmp;
+                            break;
+                        }
+                        temp = temp->left;
+                    }
+                }
             }
         }
-
+        void deleteNode(T val){}
+        void inOrderTraversal(){}
+        void preOrderTraversal(){}
+        void postOrderTraversal(){}
 };
-//Binary Tree (AVL, Red Black)
 
 //Trie structure
-class TrieNode{
-    vector<char>children = vector<char>(26,'\0');
-    bool isEnd;
-
-    public:
-        TrieNode():isEnd(false){}
-};
-
 class Trie{
+    struct TrieNode{
+        vector<char> children = vector<char>(26, '\0');
+        bool isEnd;
+        TrieNode() : isEnd(false) {}
+    };
+
     TrieNode *root;
-
-    public:
-        
-        
-        void insert() {
-
-        }
 };
 
 // //Sorting techniques
 
+//Bubble Sort
 void bubbleSort(int a[], int size) {
     for(int i{0}; i < size-1; i++){
         for(int j{0}; j < size-1-i; j++) {
@@ -210,20 +223,22 @@ void bubbleSort(int a[], int size) {
     }
 }
 
-// void selectionSort(int a[], int size) {
-//     for(int i{0}; i < size-1; i++) {
-//         int mn = i;
-//         for(int j{i+1}; j < size; j++) {
-//             if(a[j] < a[i]) {
-//                 mn = j;
-//             }
-//         }
-//         int temp = a[mn];
-//         a[mn] = a[i];
-//         a[i] = temp;    
-//     }
-// }
+//Insertion Sort
+void selectionSort(int a[], int size) {
+    for(int i{0}; i < size-1; i++) {
+        int mn = i;
+        for(int j{i+1}; j < size; j++) {
+            if(a[j] < a[i]) {
+                mn = j;
+            }
+        }
+        int temp = a[mn];
+        a[mn] = a[i];
+        a[i] = temp;    
+    }
+}
 
+//Merge Sort
 void merge(int a[], int s , int m, int e) {
     int leftArrSize = m-s+1;
     int rightArrSize = e-m;
@@ -265,10 +280,6 @@ void mergeSort(int a[], int l, int r) {
     mergeSort(a,l,mid);
     mergeSort(a,mid+1,r);
     merge(a,l,mid,r);
-}
-
-void insertionSort(int a[]) {
-
 }
 
 int main() {
