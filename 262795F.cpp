@@ -8,9 +8,9 @@ using namespace std;
 
 void solve() {
     int n,q; cin >> n >> q;
-    vector<int>a(n+1);
+    vector<ll>a(n+1);
     for(int i(0);i<n;i++) {cin >> a[i];}
-    vector<int>queries(n+2);
+    vector<ll>queries(n+2);
     int L,R,val;
     while(cin >> L >> R >> val) {
         L--; R--;
@@ -26,9 +26,7 @@ void solve() {
     }
     cout << '\n';
     //using difference array
-    // a[l-1]+= val
-    // a[r] -= val;
-    // a[i] += a[i-1]
+    //
     // 1 0 1 0 1 0
     // 0 3 0 2 0 0 -5
     // 0 3 3 5 5 5 0

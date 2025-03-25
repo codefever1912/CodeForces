@@ -9,17 +9,18 @@ using namespace std;
 #define nl '\n'
 
 void solve() {
-    int n,q; cin >> n >> q;
-    string s; cin >> s;
+    stack<int>st;
+    int q; cin >> q;
     while(q--) {
-        string query;
-        int perm;
-        cin >> query >> perm;
-        while(perm--) {
-            next_permutation(query.begin(), query.end());
+        string s; cin >> s;
+        if(s == "push") {
+            int x; cin >> x;
+            st.push(x);
+        } else if(s == "top") {
+            cout << st.top() << nl;
+        } else {
+            st.pop();
         }
-
-        cout << query << nl;
     }
 }
 
@@ -27,6 +28,4 @@ int main(){
     fastio();
 
     solve();
-
-    return 0;
-}
+}   

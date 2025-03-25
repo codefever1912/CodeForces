@@ -16,10 +16,14 @@ void solve() {
         int perm;
         cin >> query >> perm;
         while(perm--) {
-            next_permutation(query.begin(), query.end());
+            if(query=="prev_permutation") {
+                prev_permutation(s.begin(), s.end());
+            } else {
+                next_permutation(s.begin(), s.end());
+            }
         }
 
-        cout << query << nl;
+        cout << s << nl;
     }
 }
 

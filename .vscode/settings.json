@@ -98,6 +98,9 @@
         "__config": "cpp",
         "__verbose_abort": "cpp",
         "ios": "cpp",
-        "locale": "cpp"
+        "locale": "cpp",
+        "__split_buffer": "cpp",
+        "__hash_table": "cpp",
+        "__tree": "cpp"
     }
 }
