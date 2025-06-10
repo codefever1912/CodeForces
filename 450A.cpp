@@ -10,18 +10,15 @@ using namespace std;
 #define vin(v) for(auto &e : v) {cin >> e;}
 
 void solve() {
-    int n; cin >> n;
+    int n, m; cin >> n >> m;
     vector<int>v(n);
-    vin(v);
-    int i = 0;
-    int sum = 0;
-    while(true) {
-        i = i % 7;
-        if(sum + v[i] >= n) break;
-        else sum += v[i];
-    }
+    
 
-    cout << i + 1 << nl;
+    /*
+    5 4
+    4 3 2 1 3
+
+    */
 }
 
 int main(){

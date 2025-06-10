@@ -9,17 +9,24 @@ using namespace std;
 #define nl '\n'
 
 void solve() {
-    int n,q; cin >> n >> q;
-    string s; cin >> s;
-    while(q--) {
-        string query;
-        int perm;
-        cin >> query >> perm;
-        while(perm--) {
-            next_permutation(query.begin(), query.end());
+    int n; cin >> n;
+    vector<vector<int>>a(n, vector<int>(n));
+    for(auto &e : a) {
+        for(auto &v : e) {cin >> v;} 
+    }
+    
+    vector<vector<int>>ans(n, vector<int>(n));
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            ans[j][n-i-1] = a[i][j];
         }
-
-        cout << query << nl;
+    }
+    
+    for(vector<int>v : ans) {
+        for(int x : v) {
+            cout << x << " ";
+        }
+        cout << nl;
     }
 }
 

@@ -25,7 +25,8 @@ void solve() {
     };
     for(int i = 0; i < 10; i++) {
         for(int j = 0; j < 10; j++) {
-            score += matrix[i][j];
+            char x; cin >> x;
+            if(x == 'X') score += matrix[i][j];
         }
     }
 
@@ -46,5 +47,5 @@ int main(){
     int t; cin >> t;
     while(t--) {
         solve();
-    }
+     }
 }   

@@ -13,15 +13,17 @@ void solve() {
     int n; cin >> n;
     vector<int>v(n);
     vin(v);
-    int i = 0;
-    int sum = 0;
-    while(true) {
-        i = i % 7;
-        if(sum + v[i] >= n) break;
-        else sum += v[i];
+    int mn = abs(v[0] - v[1]);
+    int x = 0, y = 1;
+    for(int i = 1; i < n; i++) {
+        if(abs(v[i] - v[i - 1]) < mn) {
+            mn = abs(v[i] - v[i - 1]);
+            x = i; y = i - 1;
+        }
     }
+    if(abs(v[0] - v[n-1]) < mn) {x = 0; y = n - 1;}
 
-    cout << i + 1 << nl;
+    cout << x + 1 << " " << y + 1 << nl;
 }
 
 int main(){

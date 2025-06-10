@@ -11,17 +11,16 @@ using namespace std;
 
 void solve() {
     int n; cin >> n;
-    vector<int>v(n);
+    vector<int>v(7);
     vin(v);
-    int i = 0;
-    int sum = 0;
-    while(true) {
-        i = i % 7;
-        if(sum + v[i] >= n) break;
-        else sum += v[i];
+    int i = 0, sum = 0;
+    while(sum < n) {
+        sum += v[i];
+        i++;
+        i = i%7;
     }
 
-    cout << i + 1 << nl;
+    cout << ((i==0) ? 7: i) << nl;
 }
 
 int main(){
