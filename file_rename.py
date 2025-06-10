@@ -19,7 +19,7 @@ def rename_files(directory):
         }
 
         for file in os.listdir(directory):
-            if file.endswith(('.cpp', '.bin', '.exe')):
+            if file.endswith(('.cpp', '.bin', '.exe', '.py')):
                 parts = file.split  ('.')
                 file_name = parts[0]
                 extension = parts[1]
@@ -28,7 +28,7 @@ def rename_files(directory):
                     print(f"Skipping {file} cuz data for this file could not be retrieved from API")
                     continue 
 
-                new_file_name = file_name + problem_map[file_name]
+                new_file_name = problem_map[file_name]
                 sanitized_name = new_file_name.replace(' ', '_').replace('/', '_').replace(":", '_')
 
                 old_path = os.path.join(directory, file)
