@@ -18,10 +18,11 @@ void solve() {
         if(x == 1) {mx = max(mx, curr); curr = 0;}
     }
 
+    mx = max(mx, curr);
     cout << mx << nl;
 }
 
-int main(){
+int main() {
     fastio();
     int t; cin >> t;
     while(t--) {
