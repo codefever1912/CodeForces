@@ -10,9 +10,14 @@ using namespace std;
 #define vin(v) for(auto &e : v) {cin >> e;}
 
 void solve() {
-    int n, k; cin >> n >> k;
-    if(n%2 && k%2==-0) {cout << "NO" << nl;}
-    else cout << "YES" << nl; 
+    int n; cin >> n;
+    vector<int>a(n);
+    for(auto &e : a) {
+        cin >> e;
+        cout << n - e + 1 << ' ';
+    }
+
+    cout << nl;
 }
 
 int main(){
