@@ -11,17 +11,10 @@ using namespace std;
 
 void solve() {
     int n; cin >> n;
-    vector<int>pref(n+1);
-    pref[0] = 1;
-    for(int i = 0; i < n; i++) {
-        int x; cin >> x;
-        pref[i+1] = pref[i] * x;
-    }
-    for(int i = 1; i <= n; i++) {
-        if(pref[i] == pref[n] / pref[i]) {cout << i << nl; return;}
-    }
-
-    cout << -1 << nl;
+    string s; cin >> s;
+    int i = 0;
+    while(s[i] != s[n-i-1] && i < n/2) i++;
+    cout << n - i*2 << nl;
 }
 
 int main(){

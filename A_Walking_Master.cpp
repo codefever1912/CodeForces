@@ -10,18 +10,11 @@ using namespace std;
 #define vin(v) for(auto &e : v) {cin >> e;}
 
 void solve() {
-    int n; cin >> n;
-    vector<int>pref(n+1);
-    pref[0] = 1;
-    for(int i = 0; i < n; i++) {
-        int x; cin >> x;
-        pref[i+1] = pref[i] * x;
-    }
-    for(int i = 1; i <= n; i++) {
-        if(pref[i] == pref[n] / pref[i]) {cout << i << nl; return;}
-    }
-
-    cout << -1 << nl;
+    int a,b,c,d; cin >> a >> b >> c >> d;
+    if(b > d) {cout << -1 << nl; return;}
+    a = a + d - b;
+    if(c > a) {cout << -1 << nl; return;}
+    cout << d - b + a - c << nl;
 }
 
 int main(){
