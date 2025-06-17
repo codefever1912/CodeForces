@@ -33,7 +33,7 @@ void solve() {
         if(pref_gcd[i] > i) {ans = false; break;}
     }
 
-    if(ans) {cout << "YES" << nl; return;}
+    if(ans) {cout << "Yes" << nl; return;}
 
     sort(v.begin(), v.end());
     pref_gcd[0] = v[0];
@@ -41,18 +41,21 @@ void solve() {
         pref_gcd[i] = __gcd(pref_gcd[i-1], v[i]);
     }
 
-    bool ans = true;
+    ans = true;
     for(int i = 2; i <= n; i++) {
         if(pref_gcd[i] > i) {ans = false; break;}
     }
 
-    cout << ((ans) ? "YES" : "NO") << nl;
+    cout << ((ans) ? "Yes" : "No") << nl;
 
 }
 
 int main(){
     fastio();
-    solve();
+    int t; cin >> t;
+    while(t--) {
+        solve();
+    }
 
     return 0;
-}
+} 

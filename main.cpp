@@ -84,11 +84,13 @@ int main() {
         /*
         v
     */
+
     /*
-    1 ^ odd -> odd - 1
-    1 ^ even -> even + 1
-    x^1 ^ x^2 ^ x^5 = 0
+    XOR
+    A ^ 0 = A
+    A ^ A = 0
+    A ^ B = B ^ A
+
+    
     */
-   
-    cout << (1^9^8) << nl;
 }
