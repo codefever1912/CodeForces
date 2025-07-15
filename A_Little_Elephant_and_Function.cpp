@@ -11,15 +11,24 @@ using namespace std;
 #define vin(v) for(auto &e : v) {cin >> e;}
 
 void solve() {
-    
+    int n; cin >> n;
+
+    // func calls: f(n) -> f(n-1) -> f(n-2) ... -> f(1) -> exit
+    // n = 7
+    // 7 1 2 3 4 5 6
+    // 1 2 3
+    // 1 2 3 4 5
+
+    cout << n << ' ';
+
+    for (int i = 1; i < n; i++) {
+        cout << i << ' ';
+    }
 }
 
 int main () {
     fastio();
-    int t; cin >> t;
-    while (t--) {
-        solve();
-    }
+    solve();
 
     return 0;
 }

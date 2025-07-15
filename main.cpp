@@ -93,4 +93,14 @@ int main() {
 
     
     */
+    
+    set<int>s;
+    int n = 5;
+    for(int i = 1; i < n; i++) {
+        for (int j = i + 1; j <= n; j++) {
+            s.insert(i + j);
+        }
+    }
+
+    for (int x : s) {cout << x << nl;}
 }

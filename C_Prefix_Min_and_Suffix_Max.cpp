@@ -29,16 +29,11 @@ void solve() {
 
     vector<char>ans(n);
     for(int i = 1; i <= n; i++) {
-        if (v[i-1] == mx) {ans[i] = '1';}
-        else if (v[i-1] == mn) {ans[i] = '1';}
+        if (i-1 == maxi) {ans[i] = '1'; continue;}
+        else if (i-1 == mini) {ans[i] = '1'; continue;}
         else {
-            if (v[i-1] <= pref[i] && v[i-1] <= suff[i]) {
-                ans[i] = '1';
-            } else if (v[i-1] >= pref[i] && i-1 > maxi) {
-                ans[i] = '1';
-            } else {
-                ans[i] = '0'
-            }
+            if (i-1 > mini && i-1 < maxi) {ans[i-1] = '0'; continue;}
+            else if ()
         }
     }
 
@@ -49,7 +44,10 @@ void solve() {
 
 int main(){
     fastio();
-    solve();
+    int t; cin >> t;
+    while (t--) {
+        solve();
+    }
 
     return 0;
 }

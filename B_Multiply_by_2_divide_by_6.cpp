@@ -11,6 +11,7 @@ using namespace std;
 #define vin(v) for(auto &e : v) {cin >> e;}
 
 void solve() {
+    int n; cin >> n;
     
 }
 

@@ -1,0 +1,1 @@
+print(" ".join(c for c in input().split("WUB") if c))

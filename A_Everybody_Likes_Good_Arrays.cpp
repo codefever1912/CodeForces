@@ -11,7 +11,15 @@ using namespace std;
 #define vin(v) for(auto &e : v) {cin >> e;}
 
 void solve() {
-    
+    int n; cin >> n;
+    vector<int>v(n);
+    vin(v);
+    int ops = 0;
+    for (int i = 1; i < n; i++) {
+        if (v[i] % 2 == v[i-1] % 2) ops++;
+    }
+
+    cout << ops << nl;
 }
 
 int main () {

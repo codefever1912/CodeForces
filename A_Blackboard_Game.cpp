@@ -1,7 +1,6 @@
 /*
-  Codeforces -> codefever1912
+  CodeForces - codefever1912
 */
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -12,14 +11,18 @@ using namespace std;
 
 void solve() {
     
+    int n; cin >> n;
+    if (n % 8 == 0 || n % 8 == 4) {cout << "Bob" << nl;}
+    else cout << "Alice" << nl;
+
 }
 
-int main () {
+int main() {
+
     fastio();
     int t; cin >> t;
     while (t--) {
         solve();
     }
 
-    return 0;
-}
+}   
