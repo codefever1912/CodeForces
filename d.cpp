@@ -37,7 +37,7 @@ void solve() {
             } else if (v[i-1] >= pref[i] && i-1 > maxi) {
                 ans[i] = '1';
             } else {
-                ans[i] = '0'
+                ans[i] = '0';
             }
         }
     }
