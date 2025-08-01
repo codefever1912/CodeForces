@@ -18,7 +18,7 @@ void solve() {
     int mx = *max_element(v.begin(), v.end());
     vector<int>larger;
     for (int x : v) {
-        if (x >= v[k - 1]) larger.push_back(x);
+       if (x >= v[k - 1]) larger.push_back(x);
     }
 
     sort(larger.begin(), larger.end());
@@ -26,10 +26,9 @@ void solve() {
     for (int i = 0; i < larger.size() - 1; i++) {
         int diff = larger[i+1] - larger[i];
         if (diff > (larger[i] - water)) {cout << "NO" << nl; return;}
-        
         water += diff;
     }
-
+    
     cout << "YES" << nl;
 }
 
