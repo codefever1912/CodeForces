@@ -36,7 +36,7 @@ void solve() {
             curr.clear();
             curr.push_back(v[i]);
         }
-    }    
+    }
 
     if (!curr.empty()) {
         if (curr.size() == 1) {
