@@ -13,14 +13,25 @@ using namespace std;
 void solve() {
     int n; cin >> n;
     string s; cin >> s;
-    // char curr = s[0];
-    int ans = 2;
+    
+    // int curr = 1, mx = -1;
+    // for (int i = 1; i < n; i++) {
+    //     if (s[i] == s[i - 1]) curr++;
+    //     else {
+    //         mx = max(mx, curr);
+    //         curr = 1;
+    //     } 
+    // }
+
+    int curr = 1, ans = 1;
     for (int i = 1; i < n; i++) {
-        if (s[i] == s[i - 1]) ans++;
-        // curr = s[i];
+        if (s[i] != s[i - 1]) curr = 1;
+        else curr++;
+        
+        ans = max(ans, curr);
     }
 
-    cout << ans << nl;
+    cout << ans + 1 << nl;
 }
 
 int main () {
