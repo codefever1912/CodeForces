@@ -10,7 +10,6 @@ using namespace std;
 #define vin(v) for(auto &e : v) {cin >> e;}
 
 void solve() {
-    
     int n; cin >> n;
     vector<int>v(n), pref(n+1), suff(n+1);
     int mx = 0, mn = 0;

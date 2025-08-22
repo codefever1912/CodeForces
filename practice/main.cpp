@@ -8,6 +8,21 @@ using namespace std;
 #define vin(v) for(auto &e : v) {cin >> e;}
 
 
+void findSubSequences(int idx, vector<int>&v, vector<vector<int>>&result, vector<int>curr, int curr_sum, int target_sum) {
+    if (idx == v.size()) {
+        if (curr_sum == target_sum) {
+            result.push_back(curr);
+        }
+        return;
+    }
+
+    curr.push_back(v[idx]);
+    findSubSequences(idx+1, v, result, curr, curr_sum + v[idx], target_sum);
+
+    curr.pop_back();
+    findSubSequences(idx+1, v, result, curr, curr_sum, target_sum);
+}
+
 int main() {
     // // using a map to call functions as strings, where strings are mapped to lambda functions
     // using RetType = variant<void *, char, string>;
@@ -93,14 +108,21 @@ int main() {
 
     
     */
-    
-    set<int>s;
-    int n = 5;
-    for(int i = 1; i < n; i++) {
-        for (int j = i + 1; j <= n; j++) {
-            s.insert(i + j);
+
+    // Calculating all subsequence whose sum == k
+    vector<int>v = {1,2,3,4,5};
+    int k = 10;
+    vector<vector<int>>result;
+    vector<int>current;
+    int n = v.size();
+    findSubSequences(0, v, result, current, 0, k);
+
+    for (const auto &v : result) {
+        for (const int x : v) {
+            cout << x << ' ';
         }
+        cout << '\n';
     }
 
-    for (int x : s) {cout << x << nl;}
+    
 }
